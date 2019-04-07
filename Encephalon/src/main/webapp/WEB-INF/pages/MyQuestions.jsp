@@ -28,7 +28,7 @@
                         <th scope="row">{{$index + 1}}</th>
                         <td>{{wordMeaning.word}}</td>
                         <td>
-                            <button data-id="{{}"  data-toggle='modal' data-target='#trashConfirm' class="btn btn-default" >
+                            <button   data-toggle='modal' data-target='#trashConfirm' class="btn btn-default" >
                                 <i class="fa fa-trash" aria-hidden="true"></i>    
                             </button>
                             <button  data-toggle='modal' data-windex="{{$index}}"  ng-click="viewWord($event)" data-target='#ViewWordMeaning' class="btn btn-default">
