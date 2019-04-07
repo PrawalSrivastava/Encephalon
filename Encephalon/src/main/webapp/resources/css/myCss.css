@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 Oct, 2018, 9:45:05 PM
+    Author     : prawal
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+#piChart, #scatterChart{
+    height: 400px;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color:rgba(255,255,255,.5);
+}
+#sidebar ul li a:hover {
+    color:rgba(255,255,255,.75);
+    display: block;
+    text-decoration: none;
+    
+}
+#sidebar a[data-toggle="collapse"] {
+    position: relative;
+}
+
+#sidebar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    text-decoration: none;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    
+    text-decoration: none;
+}
