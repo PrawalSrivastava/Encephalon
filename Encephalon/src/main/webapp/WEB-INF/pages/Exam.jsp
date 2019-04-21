@@ -62,12 +62,22 @@
 
                 </div>
                 <div id="pointToRememberLayout" ng-show="displayLayout.pointToRememberLayout">
-                    <!--for word--> 
                     <b id="pointSpan" >Point :</b>
                     <pre id="point" ng-bind="ptrResult.point"></pre>
                     <br/>
                     <b id="answerSpan" >Answer :</b>
-                    <pre id="answer" class="pl-3" ng-bind="ptrResult.answer"></pre>
+                    <br/>
+                    <iframe 
+                            width="560" 
+                            height="315"                            
+                            src=""
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        
+                    </iframe>
+                    <pre ng-show="ptrResult.answer.indexOf('youtube')==-1" 
+                         id="answer" class="pl-3" ng-bind="ptrResult.answer"></pre>
                     <br/>
                     <br/>
                     <br/>

@@ -138,6 +138,18 @@ app.controller('ExamController', ['$scope', '$http', '$location', 'DataService',
                     $scope.ptrResult = currQuesSet[$scope.questionNumber];
                 }
             }
+            if ($scope.type == 'Point To Remember'){
+                //this is a hack for youtube iframes
+                if(currQuesSet[$scope.questionNumber].answer.indexOf('youtube')!=-1)
+                {
+                    
+                    jQuery('iframe').show().attr('src','https://www.youtube.com/embed/'+currQuesSet[$scope.questionNumber].answer.substring(currQuesSet[$scope.questionNumber].answer.indexOf('v=')+2))
+                }
+                else
+                {
+                    jQuery('iframe').hide().attr('src','');
+                }
+            }
 
         };
         $scope.previousQuestion = function ($event) {
