@@ -1,4 +1,4 @@
-use mysql;
+use mysqlProd;
 DELIMITER //
 drop procedure if exists TopicMaintenanceProcedure//
 create procedure TopicMaintenanceProcedure()
