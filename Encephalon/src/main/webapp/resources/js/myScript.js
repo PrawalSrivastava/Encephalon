@@ -15,7 +15,11 @@ app.config(function ($routeProvider) {
         templateUrl: "MyQuestions"
     });
 });
-
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
 app.controller('HomeController', ['$scope', '$http', '$location', 'DataService', function ($scope, $http, $location, DataService) {
         console.log('HomeController');
         console.log('going to laod google charts');
@@ -79,7 +83,22 @@ app.controller('addQuestionWizardController', function ($scope, $http) {
 });
 app.controller('ExamController', ['$scope', '$http', '$location', 'DataService', function ($scope, $http, $location, DataService) {
         console.log('ExamController');
+        
         let currQuesSet = DataService.currentQuestionSet;
+        for(let x=0;x<currQuesSet.length;x++)
+        {
+            let topicArray=[];
+            let topic=currQuesSet[x].meta.topic;
+            if(topic){
+                
+                while(topic && topic.nodeLevel>=0)
+                {
+                    topicArray.push({id:topic.id,topicName:topic.topicName});
+                    topic=topic.parentTopic;
+                }
+            }
+            currQuesSet[x].topicArray=topicArray;
+        }
         $scope.questionNumber = 0;
         $scope.examQuestionResponse = [];
         $scope.displayLayout = {};
@@ -90,11 +109,14 @@ app.controller('ExamController', ['$scope', '$http', '$location', 'DataService',
         console.log(currQuesSet);
         $scope.setScreenForQuestions = function () {
             //Here I have to set the screen for the Questions asked
+            $scope.wmResult=null;
+            $scope.ptrResult=null;
+            $scope.displayLayout.topicArray= currQuesSet[$scope.questionNumber].topicArray;
             if ($scope.examQuestionResponse[$scope.questionNumber])
             {
                 //In this case we jsut need to set the values
                 if ($scope.type == 'Word Meaning') {
-                    $scope.wmResult = currQuesSet[$scope.questionNumber].results[0];
+                    $scope.wmResult = currQuesSet[$scope.questionNumber].results[0];                                        
                     if ($scope.examQuestionResponse[$scope.questionNumber].response)
                     {
                         jQuery(jQuery('#wordMeaningLayout1 #layout1RadioOptionsDiv input')[0]).prop('checked', true);
@@ -110,6 +132,7 @@ app.controller('ExamController', ['$scope', '$http', '$location', 'DataService',
                     $scope.displayLayout.pointToRememberLayout = true;
                     $scope.displayLayout.wordMeaningLayout2 = false;
                     $scope.ptrResult = currQuesSet[$scope.questionNumber];
+                    
                     if ($scope.examQuestionResponse[$scope.questionNumber].response)
                     {
                         jQuery(jQuery('#pointToRememberLayout #layout1RadioOptionsDiv input')[0]).prop('checked', true);
@@ -123,9 +146,8 @@ app.controller('ExamController', ['$scope', '$http', '$location', 'DataService',
             {
                 //In this case we need to choose the layout
                 //First get to know that is the question type
-                if ($scope.type == 'Word Meaning') {
-                    $scope.wmResult = currQuesSet[$scope.questionNumber].results[0];
-
+                if ($scope.type == 'Word Meaning') {                    
+                    $scope.wmResult = currQuesSet[$scope.questionNumber].results[0];                    
                     $scope.displayLayout.wordMeaningLayout1 = true;
                     $scope.displayLayout.pointToRememberLayout = false;
                     $scope.displayLayout.wordMeaningLayout2 = false;
@@ -135,7 +157,7 @@ app.controller('ExamController', ['$scope', '$http', '$location', 'DataService',
                     $scope.displayLayout.wordMeaningLayout1 = false;
                     $scope.displayLayout.pointToRememberLayout = true;
                     $scope.displayLayout.wordMeaningLayout2 = false;
-                    $scope.ptrResult = currQuesSet[$scope.questionNumber];
+                    $scope.ptrResult = currQuesSet[$scope.questionNumber];                  
                 }
             }
             if ($scope.type == 'Point To Remember'){
@@ -343,7 +365,14 @@ app.controller('myQuestionsController', ['$scope', '$http', '$location', 'DataSe
             console.log('handled tab');
 
             console.log(this.wmResult);
-            wmResult = $.parseJSON(this.wordMeanings[$event.target.dataset.windex].oxfordResponse).results[0];
+            $scope.wmResult = $.parseJSON(this.wordMeanings[$event.target.dataset.windex].oxfordResponse).results[0];
+
+        };
+        $scope.viewPTR = function ($event) {
+            console.log('handled tab');
+
+           
+            $scope.ptrResult = this.pointToRemember;
 
         };
 

@@ -32,8 +32,8 @@
                                 <i class="fa fa-trash" aria-hidden="true"></i>    
                             </button>
                             <button  data-toggle='modal' data-windex="{{$index}}"  ng-click="viewWord($event)" data-target='#ViewWordMeaning' class="btn btn-default">
-<!--                                <i class="fa fa-eye" aria-hidden="true"></i>    -->
-View
+                                <!--                                <i class="fa fa-eye" aria-hidden="true"></i>    -->
+                                View
                             </button>
                         </td>
                     </tr>
@@ -62,8 +62,8 @@ View
                                 <i class="fa fa-trash" aria-hidden="true"></i>    
                             </button>
 
-                            <button class="btn btn-default">
-                                <i class="fa fa-eye" aria-hidden="true"></i>    
+                            <button  data-toggle='modal' data-windex="{{$index}}"  ng-click="viewPTR($event)" data-target='#ViewPointToRemember' class="btn btn-default">
+                                View
                             </button>
                             <button class="btn btn-default">
                                 <i class="fa fa-edit" aria-hidden="true"></i>    
@@ -92,7 +92,7 @@ View
                     <div class="d-block">
                         Are you sure?
                     </div>
-                    
+
 
                 </div>
 
@@ -120,7 +120,7 @@ View
 
                 <!-- Modal body -->
                 <div class="modal-body" >
-                    
+
                     <div id="wordMeaningLayout1" class="d-block">
                         <!--for word--> 
                         <b id="wordSpan" >Word :</b>
@@ -159,11 +159,54 @@ View
                         <br/>
                         <br/>
                         <br/>
-                        <div id="layout1RadioOptionsDiv" ng-click="questionAnswered($event)">
+                        <!--                        <div id="layout1RadioOptionsDiv"  ng-click="questionAnswered($event)">
+                                                    <input name="layout1RadioOptions" type="radio" > I Remember</input>
+                                                    <br/>
+                                                    <input name="layout1RadioOptions" type="radio" > I Don't Remember</input>
+                                                </div>-->
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default "  data-dismiss="modal" >Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal fade" id="ViewPointToRemember" >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-lg">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Point To Remember</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body" >
+
+                    <div id="pointToRememberLayout" >
+                        <b id="pointSpan" >Point :</b>
+                        <pre id="point" ng-bind="ptrResult.point"></pre>
+                        <br/>
+                        <b id="answerSpan" >Answer :</b>
+                        <br/>
+                        
+                        <pre ng-show="ptrResult.answer.indexOf('youtube') == -1" 
+                             id="answer" class="pl-3" ng-bind="ptrResult.answer"></pre>
+                        <br/>
+                        <br/>
+                        <br/>
+<!--                        <div id="layout1RadioOptionsDiv" ng-click="questionAnswered($event)" >
                             <input name="layout1RadioOptions" type="radio" > I Remember</input>
                             <br/>
                             <input name="layout1RadioOptions" type="radio" > I Don't Remember</input>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
 

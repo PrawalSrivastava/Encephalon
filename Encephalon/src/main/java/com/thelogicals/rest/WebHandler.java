@@ -84,9 +84,10 @@ public class WebHandler {
                     ob.remove("userName");
                     ob.put("questionType", "Word Meaning");
                     newObj.putAll(ob);
+                    newObj.put("meta", obj1.get("meta"));
                     arr1.add(newObj);
                 } else if (obj1.containsKey("point")) {
-                    obj1.remove("meta");
+                    //obj1.remove("meta");
 
                     obj1.put("questionType", "Point To Remember");
                     arr1.add(obj1);

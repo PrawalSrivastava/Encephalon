@@ -4,14 +4,13 @@
             <div class="card-header">
                 <!--Mention Question Type-->
                 <span>{{type}}</span>
-                <ul class="breadcrumb">
-                    <li><a href="#">Home</a> <span class="divider">/</span></li>
-                    <li><a href="#">Library</a> <span class="divider">/</span></li>
-                    <li class="active">Data</li>
-                </ul>
-                <!--THen mention Question Number-->
-                <span class="float-right clearfix">Question No: {{questionNumber + 1}}</span>
-                
+                <span class="float-right  ">Question No: {{questionNumber + 1}}</span>
+                <ul class="breadcrumb ">
+                    <li ng-repeat="topic in displayLayout.topicArray  | reverse">
+                        <a href="#">{{topic.topicName}}</a> <span class="divider">/</span>
+                    </li>  
+                    
+                </ul>                
             </div>
             <div class="card-body">
                 <div id="wordMeaningLayout1" ng-show="displayLayout.wordMeaningLayout1">

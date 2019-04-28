@@ -12,6 +12,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -20,6 +22,7 @@ import org.hibernate.annotations.GenericGenerator;
  * @author prawal
  */
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class QuestionMeta implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)    
