@@ -16,7 +16,7 @@ begin
 			select DifficultyCatagory, ((count(1)*100)/InteractionCount) as Percentage from QuestionUserIntraction where userId =userIdVar group by DifficultyCatagory;
         elseif Upper(chartType) =SCATTER then
 			select MAX(TimesAsked) into  MaxTimesAsked from QuestionUserIntraction where userId =userIdVar;
-			select distinct  ((TimesAsked*100)/ MaxTimesAsked) as TimesAsked, ((TimesCorrect*100)/TimesAsked) as TimesCorrect from QuestionUserIntraction where userId =userIdVar;
+			select  ((TimesAsked*100)/ MaxTimesAsked) as TimesAsked, ((TimesCorrect*100)/TimesAsked) as TimesCorrect from QuestionUserIntraction where userId =userIdVar order by TimesAsked,TimesCorrect;
         end if;
         
 	

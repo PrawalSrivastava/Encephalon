@@ -71,6 +71,7 @@
                                     <div class="col-md-6 offset-md-4">
                                         <input class="btn btn-primary" name="submit" type="submit"
                                                value="Login" />
+                                        <input type="checkbox" name="remember-me"/>
                                         <a href="#" class="btn btn-link">
                                             Forgot Your Password?
                                         </a>
