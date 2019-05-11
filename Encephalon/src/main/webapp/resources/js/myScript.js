@@ -354,7 +354,8 @@ app.controller('myQuestionsController', ['$scope', '$http', '$location', 'DataSe
         };
         $scope.trashQuestion = function ($event) {
             console.log('handled tab');
-            $http.delete('trashQuestion', {id: 'this is data'}).then(function (e) {
+            console.log('id: '+$($event.target).data('id'));
+            $http.delete('trashQuestion/'+$($event.target).data('id')).then(function (e) {
                 console.log('Success: ' + e);
             }, function (e) {
                 console.log('error: ' + e);
@@ -375,6 +376,9 @@ app.controller('myQuestionsController', ['$scope', '$http', '$location', 'DataSe
             $scope.ptrResult = this.pointToRemember;
 
         };
+        $('#trashConfirm').on('show.bs.modal',function(e){            
+            $('.btn-danger',this).data('id',e.relatedTarget.dataset.id);
+        });
 
     }]);
 //Some common Event Handling

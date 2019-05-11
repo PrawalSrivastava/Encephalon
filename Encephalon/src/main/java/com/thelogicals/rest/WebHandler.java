@@ -155,9 +155,13 @@ public class WebHandler {
         UserDetails userDetails
                 = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String userName = userDetails.getUsername();
+        JSONObject obj=new JSONObject();
+        obj.put("userName", userName);
+        obj.put("id", id);
         
+//        ResponseEntity<JSONObject> ss = rt.postForEntity("http://localhost:8080/EService-1.0-SNAPSHOT/myQuestions/", obj, JSONObject.class);
         JSONObject response = new JSONObject();
-        response.put("al", "this is response");
+//        response.putAll(ss.getBody());                
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     @RequestMapping(value = "/account/myCharts", method = RequestMethod.POST)

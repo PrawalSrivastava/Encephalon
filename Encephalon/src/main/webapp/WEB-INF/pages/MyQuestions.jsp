@@ -28,7 +28,7 @@
                         <th scope="row">{{$index + 1}}</th>
                         <td>{{wordMeaning.word}}</td>
                         <td>
-                            <button   data-toggle='modal' data-target='#trashConfirm' class="btn btn-default" >
+                            <button data-id="{{wordMeaning.id}}"  data-toggle='modal' data-target='#trashConfirm' class="btn btn-default" >
                                 <i class="fa fa-trash" aria-hidden="true"></i>    
                             </button>
                             <button  data-toggle='modal' data-windex="{{$index}}"  ng-click="viewWord($event)" data-target='#ViewWordMeaning' class="btn btn-default">
@@ -100,7 +100,7 @@
                 <div class="modal-footer">
 
                     <button type="button" class="btn btn-default "  data-dismiss="modal" >Cancel</button>
-                    <button type="button" class="btn btn-danger"   ng-click="trashQuestion($event)" data-dismiss="modal">Trash</button>
+                    <button type="button" class="btn btn-danger" data-id=""  ng-click="trashQuestion($event)" data-dismiss="modal">Trash</button>
                 </div>
 
             </div>
