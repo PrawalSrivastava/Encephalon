@@ -1,16 +1,17 @@
 <div class="row " id="ExamDiv" ng-controller="ExamController" >
     <div class="col-md-12">
         <div class="card " style="height: 100%">
-            <div class="card-header">
+            <div class="card-header d-flex align-items-center pt-0 pb-0">
                 <!--Mention Question Type-->
-                <span>{{type}}</span>
-                <span class="float-right  ">Question No: {{questionNumber + 1}}</span>
-                <ul class="breadcrumb ">
+                <span class="pr-3">{{type}}</span>
+                
+                <ul class="breadcrumb flex-grow-1 mb-0">
                     <li ng-repeat="topic in displayLayout.topicArray  | reverse">
                         <a href="#">{{topic.topicName}}</a> <span class="divider">/</span>
                     </li>  
                     
                 </ul>                
+                <span class="float-right pl-3 ">Question No: {{questionNumber + 1}}</span>
             </div>
             <div class="card-body">
                 <div id="wordMeaningLayout1" ng-show="displayLayout.wordMeaningLayout1">
