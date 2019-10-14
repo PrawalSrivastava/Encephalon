@@ -1,0 +1,242 @@
+--------Urls------------
+#) People Portal: https://peopleportal2.sapient.com
+#) Helpdesk	: 	https://prod-servicedesk.publicisgroupe.net/helpportal
+#) Enrich 	:	https://enrich.sapient.com/Enrich/	
+#) KBG: SAPE-120437
+		120437
+------------------------
+#) Account Update 			--Done
+#) Profile update
+#) Time Sheet 				--Done
+#) Resume update			--Done
+#) KBG Update
+------------------------
+#) Tax Document printing 	-- Can not do
+#) Registry
+#) ICICI Password reset		-- Done
+#) All ICICI accounts		-- Done
+#) check society names
+#) KBG Portal
+------------------------
+#) Print Documents			-- Done
+#) Fill Tax declaration
+#) Study
+	#) Java
+		#) Java 8 Features
+			Java Streams:
+				Filter
+				Map
+				Reduce
+				find
+				match
+				Collect
+					filter transactions by cost and group by currency
+				limit
+				#) There are intermediate methods and terminal methods like collect
+				#) There are 2 methods to get sreams
+					#) collection.stream
+					#) collection.parallelStream
+				#) Possible problems in concurrency
+					#) Data Race
+					#) DeadLock
+					#) Live Lock
+					#) Resource Starvation
+		#) Java Locks 
+			#) ReentrantLocks
+			#) ReentrantReadWriteLocks
+			#) StampedLock
+			#) https://www.baeldung.com/java-concurrent-locks
+		#) design Patterns
+			#) What Is Factory Pattern?
+					It is the most used design pattern in Java.
+					These design patterns belong to the Creational Pattern as this pattern provides one of the best ways to create an object.
+					In the Factory pattern, we don't expose the creation logic to the client and refer the created object using a standard interface.
+					Factory Pattern allows the sub-classes to choose the type of objects to create.
+					The Factory Pattern is also known as Virtual Constructor.
+			#) Describe in how many ways can you create a singleton pattern?
+					There are two ways of creating a Singleton pattern.
+					1. Early Instantiation
+					It is responsible for the creation of instance at load time.
+					2. Lazy Instantiation
+					It is responsible for the creation of instance when required.
+			#) What are the Adapter patterns?
+					Adapter pattern converts the interface of a class into another interface based on the requirement.
+					In other words, it let you convert the interface according to requirement while using the class service with a different interface.
+					It is also known as Wrapper.
+			#) What are Some Design Patterns which are used in the JDK library?
+					Some of the design patterns which are used in the JDK library are as follows.
+					The decorator pattern is used by Wrapper classes.
+					Singleton pattern is used by Calendar classes (Runtime).
+					The Wrapper classes use factory pattern like Integer.valueOf.
+					Event handling frameworks use observer pattern like swing, awt.
+			#) Can you write Thread-safe Singleton in Java?
+					There are many ways to write a Thread-safe singleton in Java.
+					Thread-safe Singleton can be written by writing singleton using double-checked locking.
+					Another way is, by using static Singleton instance initialized during class loading.
+					By using Java enum to create a thread-safe singleton, this is the most straightforward way.
+			#) Is it possible to create a clone of a singleton object?
+					Yes, it is possible to create a clone of a singleton object.
+		#) Data Structures
+		#) Immutability,
+			#) How do you make a class immutable
+				To create an immutable class in java, you have to do following steps.
+				Declare the class as final so it can’t be extended.
+				Make all fields private so that direct access is not allowed.
+				Don’t provide setter methods for variables
+				Make all mutable fields final so that it’s value can be assigned only once.
+				Initialize all the fields via a constructor performing deep copy.
+				Perform cloning of objects in the getter methods to return a copy rather than returning the actual object reference.
+		#) Exception Handling, Serialization
+		#) Enum, Annotation, Generics
+		#) Exceptions during serialization
+		#) Concurrent Packages, Concurrent API
+			There are Executers, We use Executer Service classes to schedule tasks. There are different types of Executer Services, 
+				#) FixedSize Executer Service
+				#) ScheduledExecuterService,
+					In the scheduledExecuterSerivce we can repeatedly execute a tasks
+		#) Java Memory Model
+			Changes in java memory model in java 8
+			PermGen is replaced with metaspace
+			Its impact is no more OutOfMemoryError 
+			PermSize and MaxPermSize are now ignored and a warning is given if used
+			Garbage collection is now triggered once the MetaSpace is filled
+		#) Streams collectors
+		#) JVisualVM
+		#) Multi threading
+			Advanced classes
+			CompletableFuture	
+		#) Collections
+			Synchronized collections
+		#) Spring
+			mcv
+				Normal Controllers
+				Service providers
+				Repositories
+				Components
+				Bean scopes 
+			core
+				Scope of beans
+			security
+		#) Hibernates
+			Locking mechanism		
+		#) Log4j
+		---------------------
+		#) Solid 
+			example implementations in java API
+		#) HASHSET
+			Internal Storage 
+			>> All Classes of Set interface are internally backed with Map 
+			>> The value provided for set acts as the key in the map and it taked an object as its value
+		#) HashMap In java 8 new things
+			For key does the  equals method work
+			https://www.youtube.com/watch?v=c3RVW3KGIIE
+		#) OutOfMemory Exception which memory is it 
+		#) CountDown Latch and Cyclic Barrier
+			Make programe for CountDownLatch and Cyclic Barrier
+		#) Interrupt and Interrupted
+		#) Extrinsic Locking and IntrinsicLocking
+		#) Default Dependancy Injection
+		#) @Transaction - Read AOP 
+			#) Transaction Manager
+			#) Aspects Arround beforeafter
+			#) Persistance Provider Entity Namager and session from hibernate
+		#) AOP
+		#) Hibernamte get and load		
+			list differences
+			Hibernate Design Patters
+		#)Table Creation Stratgy and Saving Strategy
+		----------------------
+		#)
+		
+	#) RDBMS
+		#) Joins, group by aggregate functions	
+		
+	#) Angular 5
+		#) Structure of project
+-----------------------------
+Strategy
+	#) One revision of Java then read angular 5s
+-----------------------------
+#) https://www.geeksforgeeks.org/find-the-missing-number/
+--------------31-7-2019-----------------
+#) Paytm Password 		-- Done
+#) Chck Mutual Funds	-- Done
+#) RO Service			-- Done 
+#) Comparison of Term Insurance -- Done
+	LICa
+		Plan Name: LIC E-term Plan
+			Without any add ons cost is 22635 annualy
+			means 1887 monthly
+	Max Life
+		Agent Ashish
+		Plan Name: Max Life Online term Plan Plus
+		Types of term insurances
+			(3 options - lumpsum one time, lumpsum along with a monthly income or lumpsum with increasing monthly income)
+		Cost of lumpsum insurance Till the age 70 Years
+			Selected the Add-on Benefits
+				Accidental death and dismemberment(ADD) cover  (40 Lakh)
+				Premium waiver benefit (On payment of additional premium for rider) 
+				Critical illness (CI) benefit#(On payment of additional premium) (25 Lakh)
+			Cover of 1.5 Cr costs approx 2074  per month for next 34 years
+#) Study
+---------------------------------
+#) Dynamic programming
+#) Revision
+#) HDFC bank
+
+-----------------
+#) Spring Data JPA
+#) Spring JMS
+#) Spring Microservices
+
+#) JMS Implementation
+#) Microservices implementations
+#) Spring injection interview questions
+#) Spring rest bean validation
+#) Spring Rest webservices
+	https://www.softwaretestinghelp.com/restful-web-services-interview-question/
+	#) Designing the URL of a resource
+	#) Their converter
+#) Spring data validation
+#) Spring Exception handling
+#) Card Access Ticket
+#) Transport Optout ticket
+#) Resume update
+#) send email to paytm 
+#) show top 2 scoring subject for each student?
+#) Write Questions of ACE
+#) Resume Correction -- Done
+#) Paytm HR Conversation
+----------------------
+#) CompletableFuture uses forkJoin pool, and behind the scene working of it.
+#) Spring Core Transaction and transaction isolation, transaction propogation		-- Somewhat done
+#) Two Phase commit
+#) JMS
+#) Types of IOC Container
+#) Design pattern of IOC
+#) waht will happen to singleton class having dependancy on prototype bean -- Done
+#) Why spring boot 
+	AutoConfiguration
+	property externalizartion
+	actuator 
+	Validation
+	RSET Validation
+	REST Maturity
+#) How will you create your URLS for RST 
+	Versioning 
+	pagination
+	Sorting
+#) N+1 problem problem
+#) MArtine flower rest and microservices
+#) Scenario based hibernate mapping
+	https://codingcompiler.com/jpa-interview-questions-answers/
+#) @Fetch(FetchMode.SELECT)
+#) @Fetch(FetchMode.SUBSELECT)
+#) UniDirectional relation . CRUD
+#) Bidirectional relation . CRUD
+#) Cache, second level cache, 
+#) AOP Transactionla 
+#) Fina graned security, course grained security
+#) How do you map a simple string collection in an entity jpa?
+#) Core Java
+	https://javarevisited.blogspot.com/2015/10/133-java-interview-questions-answers-from-last-5-years.html
